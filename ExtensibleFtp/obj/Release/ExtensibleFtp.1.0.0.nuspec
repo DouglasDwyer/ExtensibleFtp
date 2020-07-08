@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>ExtensibleFtp</id>
+    <version>1.0.0</version>
+    <authors>Douglas Dwyer</authors>
+    <owners>Douglas Dwyer</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>ExtensibleFtp provides a customizable, scalable FTP server implementation in .NET.</description>
+    <tags>ftp csharp</tags>
+    <repository type="Git" url="https://github.com/DouglasDwyer/ExtensibleFtp" />
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="System.ServiceModel.Primitives" version="4.7.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\Projects\ExtensibleFtp\ExtensibleFtp\bin\Release\netcoreapp3.1\ExtensibleFtp.dll" target="lib\netcoreapp3.1\ExtensibleFtp.dll" />
+  </files>
+</package>

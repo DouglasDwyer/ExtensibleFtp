@@ -1,0 +1,9 @@
+D:\Projects\ExtensibleFtp\ExtensibleFtp\bin\Release\netcoreapp3.1\ExtensibleFtp.deps.json
+D:\Projects\ExtensibleFtp\ExtensibleFtp\bin\Release\netcoreapp3.1\ExtensibleFtp.dll
+D:\Projects\ExtensibleFtp\ExtensibleFtp\bin\Release\netcoreapp3.1\ExtensibleFtp.pdb
+D:\Projects\ExtensibleFtp\ExtensibleFtp\obj\Release\netcoreapp3.1\ExtensibleFtp.csprojAssemblyReference.cache
+D:\Projects\ExtensibleFtp\ExtensibleFtp\obj\Release\netcoreapp3.1\ExtensibleFtp.AssemblyInfoInputs.cache
+D:\Projects\ExtensibleFtp\ExtensibleFtp\obj\Release\netcoreapp3.1\ExtensibleFtp.AssemblyInfo.cs
+D:\Projects\ExtensibleFtp\ExtensibleFtp\obj\Release\netcoreapp3.1\ExtensibleFtp.csproj.CoreCompileInputs.cache
+D:\Projects\ExtensibleFtp\ExtensibleFtp\obj\Release\netcoreapp3.1\ExtensibleFtp.dll
+D:\Projects\ExtensibleFtp\ExtensibleFtp\obj\Release\netcoreapp3.1\ExtensibleFtp.pdb

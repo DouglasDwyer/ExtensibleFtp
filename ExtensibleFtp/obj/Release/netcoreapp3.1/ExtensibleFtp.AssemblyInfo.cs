@@ -12,7 +12,7 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("Douglas Dwyer")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("ExtensibleFtp provides a customizable, scalable FTP server implementation in .NET" +
     ".")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
