@@ -10,16 +10,43 @@ using System.Threading.Tasks;
 
 namespace DouglasDwyer.ExtensibleFtp
 {
+    /// <summary>
+    /// Represents a client that is currently connected to an <see cref="ExtensibleFtpServer"/>.
+    /// </summary>
     public sealed class ExtensibleFtpUser
     {
+        /// <summary>
+        /// The FTP server that is hosting this client.
+        /// </summary>
         public ExtensibleFtpServer Host { get; }
+        /// <summary>
+        /// The client's user identity, or null if the client is not logged in.
+        /// </summary>
         public IFtpIdentity Identity { get; set; }
+        /// <summary>
+        /// The filesystem associated with the current <see cref="Identity"/>.  This may throw an exception if the user is not logged in.
+        /// </summary>
         public IFtpFilesystem Filesystem => Identity.Filesystem;
+        /// <summary>
+        /// The encoding type to use when transferring information across the data connection.
+        /// </summary>
         public TransferMode TransferType { get; set; } = TransferMode.ASCII;
+        /// <summary>
+        /// The current data connector.
+        /// </summary>
         public IDataConnector DataClient { get; set; }
-
+        /// <summary>
+        /// Whether the client has been authenticated.
+        /// </summary>
+        public bool IsLoggedIn => Identity != null;
+        /// <summary>
+        /// The user's current FTP directory.
+        /// </summary>
         public string CurrentDirectory { get; set; } = "/";
 
+        /// <summary>
+        /// An object which contains data put there by the last command used.  Two-part commands, like USER and PASS, use this object to pass data between each other.
+        /// </summary>
         public object LastCommandData;
 
         private CancellationTokenSource ListeningCancellationSource;
@@ -28,18 +55,21 @@ namespace DouglasDwyer.ExtensibleFtp
         private StreamWriter ControlWriter;
         private StreamReader ControlReader;
 
-        public ExtensibleFtpUser(ExtensibleFtpServer host, TcpClient client)
+        internal ExtensibleFtpUser(ExtensibleFtpServer host, TcpClient client)
         {
             Host = host;
             ControlClient = client;
         }
 
-        public void Start()
+        internal void Start()
         {
             ListeningCancellationSource = new CancellationTokenSource();
             Listen(ListeningCancellationSource.Token);
         }
 
+        /// <summary>
+        /// Stops the FTP connection and disconnects the user from the server.
+        /// </summary>
         public void Stop()
         {
             ListeningCancellationSource.Cancel();
@@ -95,7 +125,7 @@ namespace DouglasDwyer.ExtensibleFtp
                     }
                     catch(FtpException e)
                     {
-                        SendResponse(e.HttpCode, e.Message);
+                        SendResponse(e.StatusCode, e.Message);
                     }
                     catch(Exception)
                     {
@@ -105,11 +135,21 @@ namespace DouglasDwyer.ExtensibleFtp
             }
         }
 
+        /// <summary>
+        /// Sends an FTP response to the client.  FTP responses consist of a status code and a single-line message.
+        /// </summary>
+        /// <param name="code">The FTP status code to send.</param>
+        /// <param name="data">The message to send along with the status code.</param>
         public void SendResponse(FtpStatusCode code, string data)
         {
             SendResponse((int)code, data);
         }
 
+        /// <summary>
+        /// Sends an FTP response to the client.  FTP responses consist of a status code and a single-line message.
+        /// </summary>
+        /// <param name="code">The FTP status code to send.</param>
+        /// <param name="data">The message to send along with the status code.</param>
         public void SendResponse(int code, string data)
         {
             ControlWriter.WriteLine(code + " " + data);

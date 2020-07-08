@@ -2,121 +2,210 @@
 
 namespace DouglasDwyer.ExtensibleFtp.Anonymous
 {
+    /// <summary>
+    /// Represents a filesystem where users have full control over any files under a certain root directory.
+    /// </summary>
     public class AnonymousFilesystem : IFtpFilesystem
     {
+        /// <summary>
+        /// The root directory in which users should be allowed to edit files.
+        /// </summary>
         public string RootDirectory { get; set; }
 
+        /// <summary>
+        /// Creates a new <see cref="AnonymousFilesystem"/> instance with the specified data.
+        /// </summary>
+        /// <param name="rootDirectory">The root directory in which users should be allowed to edit files.</param>
         public AnonymousFilesystem(string rootDirectory)
         {
             RootDirectory = rootDirectory;
         }
 
+        /// <summary>
+        /// Checks whether a directory exists.
+        /// </summary>
+        /// <param name="path">The directory to check.</param>
+        /// <returns>Whether the directory exists.</returns>
         public bool DirectoryExists(string path)
         {
-            path = Path.Combine(RootDirectory, path);
+            path = CombinePaths(RootDirectory, path);
             return Directory.Exists(path) && IsSubdirectoryOrRoot(path);
         }
-
+        /// <summary>
+        /// Checks whether a file exists.
+        /// </summary>
+        /// <param name="path">The file to check.</param>
+        /// <returns>Whether the file exists.</returns>
         public bool FileExists(string path)
         {
-            path = Path.Combine(RootDirectory, path);
+            path = CombinePaths(RootDirectory, path);
             return File.Exists(path) && IsFileOfRoot(path);
         }
-
+        /// <summary>
+        /// Retrieves all the files in the specified directory.
+        /// </summary>
+        /// <param name="path">The path of the directory.</param>
+        /// <returns>A list of files.</returns>
         public string[] GetFiles(string path)
         {
-            if(!IsSubdirectoryOrRoot(path))
+            path = CombinePaths(RootDirectory, path);
+            if (!IsSubdirectoryOrRoot(path))
             {
                 throw new FileNotFoundException();
             }
-            return Directory.GetFiles(Path.Combine(RootDirectory, path));
+            string rootFullName = new DirectoryInfo(RootDirectory).FullName;
+            string[] files = Directory.GetFiles(path);
+            for(int i = 0; i < files.Length; i++)
+            {
+                files[i] = files[i].Substring(rootFullName.Length);
+            }
+            return files;
         }
-
+        /// <summary>
+        /// Retrieves all the subdirectories in the specified directory.
+        /// </summary>
+        /// <param name="path">The path of the directory.</param>
+        /// <returns>A list of directories.</returns>
         public string[] GetSubdirectories(string path)
         {
+            path = CombinePaths(RootDirectory, path);
             if (!IsSubdirectoryOrRoot(path))
             {
                 throw new FileNotFoundException();
             }
-            return Directory.GetDirectories(Path.Combine(RootDirectory, path));
+            string rootFullName = new DirectoryInfo(RootDirectory).FullName;
+            string[] directories = Directory.GetDirectories(path);
+            for (int i = 0; i < directories.Length; i++)
+            {
+                directories[i] = directories[i].Substring(rootFullName.Length);
+            }
+            return directories;
         }
-
+        /// <summary>
+        /// Retrieves a <see cref="DirectoryInfo"/> object that contains information about a specified directory.
+        /// </summary>
+        /// <param name="path">The path of the directory.</param>
+        /// <returns>An object containing information about the directory.</returns>
         public DirectoryInfo GetDirectoryInfo(string path)
         {
+            path = CombinePaths(RootDirectory, path);
             if (!IsSubdirectoryOrRoot(path))
             {
                 throw new FileNotFoundException();
             }
-            return new DirectoryInfo(Path.Combine(RootDirectory, path));
+            return new DirectoryInfo(path);
         }
-
+        /// <summary>
+        /// Retrieves a <see cref="FileInfo"/> object that contains information about a specified file.
+        /// </summary>
+        /// <param name="path">The path of the file.</param>
+        /// <returns>An object containing information about the file.</returns>
         public FileInfo GetFileInfo(string path)
         {
+            path = CombinePaths(RootDirectory, path);
             if (!IsFileOfRoot(path))
             {
                 throw new FileNotFoundException();
             }
-            return new FileInfo(Path.Combine(RootDirectory, path));
+            return new FileInfo(path);
         }
-
+        /// <summary>
+        /// Retrieves a read-only file stream for the specified file.
+        /// </summary>
+        /// <param name="path">The path of the file to read.</param>
+        /// <returns>A read-only file stream.</returns>
         public FileStream GetFileStream(string path)
         {
-            if(!IsFileOfRoot(path))
+            path = CombinePaths(RootDirectory, path);
+            if (!IsFileOfRoot(path))
             {
                 throw new FileNotFoundException();
             }
-            return File.OpenRead(Path.Combine(RootDirectory, path));
+            return File.OpenRead(path);
         }
-
-        public string GetFilePermissions(string path)
+        /// <summary>
+        /// Gets the permission listing for the specified file.
+        /// </summary>
+        /// <param name="path">The path of the file to get information about.</param>
+        /// <param name="identity">The identity of the current user.</param>
+        /// <returns>A unix-formatted permission string.</returns>
+        public string GetFilePermissions(string path, IFtpIdentity identity)
         {
             return "-rwxrwxrwx";
         }
-
-        public string GetDirectoryPermissions(string path)
+        /// <summary>
+        /// Gets the permission listing for the specified directory.
+        /// </summary>
+        /// <param name="path">The path of the directory to get information about.</param>
+        /// <param name="identity">The identity of the current user.</param>
+        /// <returns>A unix-formatted permission string.</returns>
+        public string GetDirectoryPermissions(string path, IFtpIdentity identity)
         {
             return "drwxrwxrwx";
         }
-
+        /// <summary>
+        /// Deletes a file.
+        /// </summary>
+        /// <param name="path">The path of the file to delete.</param>
         public void DeleteFile(string path)
         {
+            path = CombinePaths(RootDirectory, path);
             if (!IsFileOfRoot(path))
             {
                 throw new FileNotFoundException();
             }
-            File.Delete(Path.Combine(RootDirectory, path));
+            File.Delete(path);
         }
-
+        /// <summary>
+        /// Deletes a directory recursively, removing all files and subdirectories.
+        /// </summary>
+        /// <param name="path">The path of the directory to delete.</param>
         public void DeleteDirectory(string path)
         {
+            path = CombinePaths(RootDirectory, path);
             if (!IsSubdirectoryOfRoot(path))
             {
                 throw new FileNotFoundException();
             }
-            Directory.Delete(Path.Combine(RootDirectory, path), true);
+            Directory.Delete(path, true);
         }
-
+        /// <summary>
+        /// Creates a new directory.
+        /// </summary>
+        /// <param name="path">The name of the directory to create.</param>
         public void CreateDirectory(string path)
         {
+            path = CombinePaths(RootDirectory, path);
             if (!IsSubdirectoryOrRoot(Path.GetDirectoryName(path)))
             {
                 throw new FileNotFoundException();
             }
-            Directory.CreateDirectory(Path.Combine(RootDirectory, path));
+            Directory.CreateDirectory(path);
         }
-
+        /// <summary>
+        /// Creates a new file.
+        /// </summary>
+        /// <param name="path">The path of the file to create.</param>
+        /// <returns>A file stream for writing to the new file.</returns>
         public FileStream CreateFile(string path)
         {
-            if(!IsFileOfRoot(path))
+            path = CombinePaths(RootDirectory, path);
+            if (!IsFileOfRoot(path))
             {
                 throw new FileNotFoundException();
             }
-            return File.Create(Path.Combine(RootDirectory, path));
+            return File.Create(path);
         }
-
+        /// <summary>
+        /// Moves a directory, changing its path.
+        /// </summary>
+        /// <param name="oldPath">The current path of the directory.</param>
+        /// <param name="newPath">The new path of the directory.</param>
         public void MoveDirectory(string oldPath, string newPath)
         {
-            if(!IsSubdirectoryOfRoot(oldPath))
+            oldPath = CombinePaths(RootDirectory, oldPath);
+            newPath = CombinePaths(RootDirectory, newPath);
+            if (!IsSubdirectoryOfRoot(oldPath))
             {
                 throw new FileNotFoundException();
             }
@@ -124,11 +213,17 @@ namespace DouglasDwyer.ExtensibleFtp.Anonymous
             {
                 throw new FileNotFoundException();
             }
-            Directory.Move(Path.Combine(RootDirectory, oldPath), Path.Combine(RootDirectory, newPath));
+            Directory.Move(oldPath, newPath);
         }
-
+        /// <summary>
+        /// Moves a file, changing its path.
+        /// </summary>
+        /// <param name="oldPath">The current path of the file.</param>
+        /// <param name="newPath">The new path of the file.</param>
         public void MoveFile(string oldPath, string newPath)
         {
+            oldPath = CombinePaths(RootDirectory, oldPath);
+            newPath = CombinePaths(RootDirectory, newPath);
             if (!IsFileOfRoot(oldPath))
             {
                 throw new FileNotFoundException();
@@ -137,7 +232,7 @@ namespace DouglasDwyer.ExtensibleFtp.Anonymous
             {
                 throw new FileNotFoundException();
             }
-            File.Move(Path.Combine(RootDirectory, oldPath), Path.Combine(RootDirectory, newPath));
+            File.Move(oldPath, newPath);
         }
 
         private bool IsSubdirectoryOrRoot(string path)
@@ -150,7 +245,7 @@ namespace DouglasDwyer.ExtensibleFtp.Anonymous
             }
             while (di2.Parent != null)
             {
-                if (di2.Parent.FullName == di1.FullName)
+                if (di2.Parent.FullName.TrimEnd('\\') == di1.FullName.TrimEnd('\\'))
                 {
                     return true;
                 }
@@ -165,7 +260,7 @@ namespace DouglasDwyer.ExtensibleFtp.Anonymous
             DirectoryInfo di2 = new DirectoryInfo(path);
             while (di2.Parent != null)
             {
-                if (di2.Parent.FullName == di1.FullName)
+                if (di2.Parent.FullName.TrimEnd('\\') == di1.FullName.TrimEnd('\\'))
                 {
                     return true;
                 }
@@ -177,6 +272,30 @@ namespace DouglasDwyer.ExtensibleFtp.Anonymous
         private bool IsFileOfRoot(string path)
         {
             return IsSubdirectoryOrRoot(Path.GetDirectoryName(path));
+        }
+
+        private string CombinePaths(params string[] args)
+        {
+            string output = "";
+            for (int i = 0; i < args.Length; i++)
+            {
+                if (args[i].EndsWith("/"))
+                {
+                    output += args[i];
+                }
+                else
+                {
+                    if(i == args.Length - 1)
+                    {
+                        output += args[i];
+                    }
+                    else
+                    {
+                        output += args[i] + "/";
+                    }
+                }
+            }
+            return output;
         }
     }
 }

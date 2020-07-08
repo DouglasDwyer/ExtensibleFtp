@@ -45,7 +45,7 @@ namespace DouglasDwyer.ExtensibleFtp.Commands
                         d.LastWriteTime.ToString("MMM dd  yyyy") :
                         d.LastWriteTime.ToString("MMM dd HH:mm");
 
-                    writer.WriteLine($"{user.Filesystem.GetDirectoryPermissions(directory)} 1 IMS IMS 0 {date} {d.Name}");
+                    writer.WriteLine($"{user.Filesystem.GetDirectoryPermissions(directory, user.Identity)} 1 FTP FTP 0 {date} {d.Name}");
                     writer.Flush();
                 }
                 foreach (string file in user.Filesystem.GetFiles(pathname))
@@ -56,7 +56,7 @@ namespace DouglasDwyer.ExtensibleFtp.Commands
                         f.LastWriteTime.ToString("MMM dd  yyyy") :
                         f.LastWriteTime.ToString("MMM dd HH:mm");
 
-                    writer.WriteLine($"{user.Filesystem.GetFilePermissions(file)} 1 IMS IMS {f.Length} {date} {f.Name}");
+                    writer.WriteLine($"{user.Filesystem.GetFilePermissions(file, user.Identity)} 1 FTP FTP {f.Length} {date} {f.Name}");
                     writer.Flush();
                 }
             }

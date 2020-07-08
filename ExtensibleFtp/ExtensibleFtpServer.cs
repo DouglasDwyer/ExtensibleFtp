@@ -11,9 +11,15 @@ using System.Threading.Tasks;
 
 namespace DouglasDwyer.ExtensibleFtp
 {
+    /// <summary>
+    /// Acts as a server which facilitates interaction between remote users and the host filesystem through the FTP protocol.
+    /// </summary>
     public sealed class ExtensibleFtpServer
     {
-        public static readonly List<FtpCommand> DefaultCommandSet = new List<FtpCommand>()
+        /// <summary>
+        /// The default list of FTP commands to use when instantiating new instances of <see cref="ExtensibleFtpServer"/>.  It contains all the basic commands necessary for FTP transactions.
+        /// </summary>
+        public static List<FtpCommand> DefaultCommandSet = new List<FtpCommand>()
         {
             new CwdCommand(),
             new DeleCommand(),
@@ -35,29 +41,50 @@ namespace DouglasDwyer.ExtensibleFtp
             new TypeCommand(),
             new UserCommand()
         };
-
+        /// <summary>
+        /// The object which manages the authentication of users attempting to log into the FTP system.
+        /// </summary>
         public IFtpAuthenticator Authenticator { get; }
+        /// <summary>
+        /// The command set that this FTP server is currently using.
+        /// </summary>
         public IList<FtpCommand> CommandSet => IndexedCommandSet.Values.ToImmutableList();
+        /// <summary>
+        /// A list of users currently logged into the server.
+        /// </summary>
         public IList<ExtensibleFtpUser> OnlineUsers => ConnectedUsers.ToImmutableList();
         
         private Dictionary<string, FtpCommand> IndexedCommandSet = new Dictionary<string, FtpCommand>();
         private SynchronizedCollection<ExtensibleFtpUser> ConnectedUsers = new SynchronizedCollection<ExtensibleFtpUser>();
         private TcpListener ControlServer;
         private object Locker = new object();
-
+        
+        /// <summary>
+        /// Creates a new <see cref="ExtensibleFtpServer"/> instance with the specified authenticator.
+        /// </summary>
+        /// <param name="authenticator">An FTP authenticator which manages user identities.</param>
         public ExtensibleFtpServer(IFtpAuthenticator authenticator)
         {
             Authenticator = authenticator;
             IndexedCommandSet = new Dictionary<string,FtpCommand>(DefaultCommandSet.Select(x => new KeyValuePair<string, FtpCommand>(x.CommandName.ToLowerInvariant(), x)));
         }
 
+        /// <summary>
+        /// Creates a new <see cref="ExtensibleFtpServer"/> instance with the specified authenticator and command set.
+        /// </summary>
+        /// <param name="authenticator">An FTP authenticator which manages user identities.</param>
+        /// <param name="commandSet">The set of FTP commands to use.</param>
         public ExtensibleFtpServer(IFtpAuthenticator authenticator, List<FtpCommand> commandSet)
         {
             Authenticator = authenticator;
             IndexedCommandSet = new Dictionary<string, FtpCommand>(commandSet.Select(x => new KeyValuePair<string, FtpCommand>(x.CommandName.ToLowerInvariant(), x)));
         }
 
-        public async Task StartAsync(int port)
+        /// <summary>
+        /// Starts the FTP server.
+        /// </summary>
+        /// <param name="port">The port that the FTP server should listen on.</param>
+        public void Start(int port = 21)
         {
             lock(Locker)
             {
@@ -68,9 +95,12 @@ namespace DouglasDwyer.ExtensibleFtp
                 ControlServer = new TcpListener(IPAddress.Any, port);
             }
             ControlServer.Start();
-            await AcceptNewClientsAsync();
+            Task.Run(AcceptNewClientsAsync);
         }
 
+        /// <summary>
+        /// Stops the FTP server, severing all client connections.
+        /// </summary>
         public void Stop()
         {
             lock (Locker)
@@ -88,6 +118,11 @@ namespace DouglasDwyer.ExtensibleFtp
             }
         }
 
+        /// <summary>
+        /// Gets a registered FTP command by the command's name.
+        /// </summary>
+        /// <param name="commandName">The name of the command in the current command set to obtain.</param>
+        /// <returns>The specified command, or null if no command was found.</returns>
         public FtpCommand GetCommand(string commandName)
         {
             FtpCommand toReturn = null;

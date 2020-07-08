@@ -8,11 +8,11 @@ namespace TestServer
 {
     class Program
     {
-        public static ExtensibleFtpServer Server = new ExtensibleFtpServer(new AnonymousAuthenticator("D:/"));
+        public static ExtensibleFtpServer Server = new ExtensibleFtpServer(new AnonymousAuthenticator("D:/Cross The Road Electronics/"));
 
         static void Main(string[] args)
         {
-            Server.StartAsync(21);
+            Server.Start(21);
             Console.ReadKey();
             Server.Stop();
         }
