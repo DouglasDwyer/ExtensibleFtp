@@ -6,3 +6,5 @@ D:\Projects\ExtensibleFtp\ExtensibleFtp\obj\Debug\netcoreapp3.1\ExtensibleFtp.As
 D:\Projects\ExtensibleFtp\ExtensibleFtp\obj\Debug\netcoreapp3.1\ExtensibleFtp.dll
 D:\Projects\ExtensibleFtp\ExtensibleFtp\obj\Debug\netcoreapp3.1\ExtensibleFtp.pdb
 D:\Projects\ExtensibleFtp\ExtensibleFtp\obj\Debug\netcoreapp3.1\ExtensibleFtp.csproj.CoreCompileInputs.cache
+D:\Projects\ExtensibleFtp\ExtensibleFtp\bin\Debug\netcoreapp3.1\ExtensibleFtp.xml
+D:\Projects\ExtensibleFtp\ExtensibleFtp\obj\Debug\netcoreapp3.1\ExtensibleFtp.csprojAssemblyReference.cache

@@ -6,7 +6,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Douglas Dwyer</Authors>
     <Company>Douglas Dwyer</Company>
-    <Description>ExtensibleFtp provides a customizable, scalable FTP server implementation in .NET.</Description>
+    <Description>ExtensibleFtp provides a customizable, scalable FTP server implementation in .NET.  It comes with a default implementation for anonymous FTP access, and allows for easy addition of new commands, abstract filesystems, and user identities/login schemes.</Description>
     <Copyright></Copyright>
     <PackageProjectUrl></PackageProjectUrl>
     <NeutralLanguage>en-US</NeutralLanguage>
@@ -14,6 +14,8 @@
     <RepositoryType>Git</RepositoryType>
     <PackageTags>ftp csharp</PackageTags>
     <Version>1.0.0.0</Version>
+    <PackageId>DouglasDwyer.ExtensibleFtp</PackageId>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -23,6 +25,13 @@
   <ItemGroup>
     <Compile Remove="DataConnection.cs" />
     <Compile Remove="PassiveDataConnection.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

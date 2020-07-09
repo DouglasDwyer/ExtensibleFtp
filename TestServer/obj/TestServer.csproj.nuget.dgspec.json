@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "D:\\Projects\\ExtensibleFtp\\ExtensibleFtp\\ExtensibleFtp.csproj",
-        "projectName": "ExtensibleFtp",
+        "projectName": "DouglasDwyer.ExtensibleFtp",
         "projectPath": "D:\\Projects\\ExtensibleFtp\\ExtensibleFtp\\ExtensibleFtp.csproj",
         "packagesPath": "C:\\Users\\Douglas\\.nuget\\packages\\",
         "outputPath": "D:\\Projects\\ExtensibleFtp\\ExtensibleFtp\\obj\\",

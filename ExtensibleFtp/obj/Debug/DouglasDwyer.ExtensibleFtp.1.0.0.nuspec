@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
-    <id>ExtensibleFtp</id>
+    <id>DouglasDwyer.ExtensibleFtp</id>
     <version>1.0.0</version>
     <authors>Douglas Dwyer</authors>
     <owners>Douglas Dwyer</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
     <description>ExtensibleFtp provides a customizable, scalable FTP server implementation in .NET.  It comes with a default implementation for anonymous FTP access, and allows for easy addition of new commands, abstract filesystems, and user identities/login schemes.</description>
     <tags>ftp csharp</tags>
     <repository type="Git" url="https://github.com/DouglasDwyer/ExtensibleFtp" />
@@ -16,6 +18,8 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="D:\Projects\ExtensibleFtp\ExtensibleFtp\bin\Release\netcoreapp3.1\ExtensibleFtp.dll" target="lib\netcoreapp3.1\ExtensibleFtp.dll" />
+    <file src="D:\Projects\ExtensibleFtp\ExtensibleFtp\bin\Debug\netcoreapp3.1\ExtensibleFtp.dll" target="lib\netcoreapp3.1\ExtensibleFtp.dll" />
+    <file src="D:\Projects\ExtensibleFtp\ExtensibleFtp\bin\Debug\netcoreapp3.1\ExtensibleFtp.xml" target="lib\netcoreapp3.1\ExtensibleFtp.xml" />
+    <file src="D:\Projects\ExtensibleFtp\LICENSE" target="LICENSE" />
   </files>
 </package>

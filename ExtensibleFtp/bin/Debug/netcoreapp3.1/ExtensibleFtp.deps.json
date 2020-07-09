@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "ExtensibleFtp/1.0.0": {
+      "ExtensibleFtp/1.0.0.0": {
         "dependencies": {
           "System.ServiceModel.Primitives": "4.7.0"
         },
@@ -101,7 +101,7 @@
     }
   },
   "libraries": {
-    "ExtensibleFtp/1.0.0": {
+    "ExtensibleFtp/1.0.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

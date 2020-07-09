@@ -14,7 +14,9 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Douglas Dwyer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("ExtensibleFtp provides a customizable, scalable FTP server implementation in .NET" +
-    ".")]
+    ".  It comes with a default implementation for anonymous FTP access, and allows f" +
+    "or easy addition of new commands, abstract filesystems, and user identities/logi" +
+    "n schemes.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("ExtensibleFtp")]
