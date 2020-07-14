@@ -1,0 +1,534 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/Projects/ExtensibleFtp/ExtensibleFtp-Documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.ActiveDataConnector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.ActiveDataConnector.html",
+          "hash": "y8Rz6RbAnqcvM/traxZAqw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousAuthenticator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousAuthenticator.html",
+          "hash": "/p6W4ePdDD+mUXPFkJKSsg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.html",
+          "hash": "RpgwAdJFHnX550Tsroxx0Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousIdentity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousIdentity.html",
+          "hash": "XG5m+ioWC6uaTBOP30U2eQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Anonymous.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Anonymous.html",
+          "hash": "xY+TPRcjaeX5BgJ8qhpsHQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.CwdCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.CwdCommand.html",
+          "hash": "BFqC2AW0JyhJnzAbaIRgNw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.DeleCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.DeleCommand.html",
+          "hash": "ZO/A8mw5lI1Qf4DeqHq1Ow=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.ListCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.ListCommand.html",
+          "hash": "k7ylw5z0c+1sarT6BZswaQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.MkdCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.MkdCommand.html",
+          "hash": "+qnY3OvKFHa/A6gVeCKS3g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.NoOpCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.NoOpCommand.html",
+          "hash": "IZp7gNKGb/7i/5CkZQQKcw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.PassCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.PassCommand.html",
+          "hash": "433NWZ+6gwg4t0U0wiV32A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.PasvCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.PasvCommand.html",
+          "hash": "bwfbInO31cRuOnYfHVmtsA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.PortCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.PortCommand.html",
+          "hash": "NIDa3zP7bphgQMn6HgEy3g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.PwdCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.PwdCommand.html",
+          "hash": "3rWKTiUgSDM2gWC319ZCQw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.QuitCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.QuitCommand.html",
+          "hash": "d/xOf9XvVaxt7GqUd4HCHg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.RetrCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.RetrCommand.html",
+          "hash": "jQ5L36sARC+cZUq4f8a7ww=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.RmdCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.RmdCommand.html",
+          "hash": "CJ2/AKOzgcBizj5Qwv6f+g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.RmdaCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.RmdaCommand.html",
+          "hash": "lAJyH486nuxecmA+zFg4mw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.RnfrCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.RnfrCommand.html",
+          "hash": "r7hPT+CdBApOa8P0F7q5ZA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.RntoCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.RntoCommand.html",
+          "hash": "Z3XGx9jNeHm9VzYRgqfgeg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.SizeCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.SizeCommand.html",
+          "hash": "QOeAH0XjbU57sPWm3sh7Tw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.StorCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.StorCommand.html",
+          "hash": "7GnrSi9rHjHOpv58kuR6LA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.TypeCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.TypeCommand.html",
+          "hash": "L9+NMkYqn+WoY4yZfg/djw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.UserCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.UserCommand.html",
+          "hash": "4XThjIVp5sE1sk/c74LzUw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.Commands.html",
+          "hash": "W83cPWwQXkjYyy1FFfpPZA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.ExtensibleFtpServer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.ExtensibleFtpServer.html",
+          "hash": "o6L4py5fiGz5S5wfGUdchw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.ExtensibleFtpUser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.ExtensibleFtpUser.html",
+          "hash": "tEGUsV0pxm3b0Piwofz94A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.FtpCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.FtpCommand.html",
+          "hash": "3adI//ZTqIt3NxIuBtslkQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.FtpException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.FtpException.html",
+          "hash": "xfVzi/YMt6WHnd7zotx2nw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.IDataConnector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.IDataConnector.html",
+          "hash": "ksfQOP3dREUWy/ywcLXd+A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.IFtpAuthenticator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.IFtpAuthenticator.html",
+          "hash": "BAv7Zecb3p58mBtNg+dfbQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.IFtpFilesystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.IFtpFilesystem.html",
+          "hash": "/5iHyiLJAZXhG7sjsX02tQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.IFtpIdentity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.IFtpIdentity.html",
+          "hash": "itu2d0XWlJjOEV5NucLx4w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.PassiveDataConnector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.PassiveDataConnector.html",
+          "hash": "OwrUEv7xqATdRS86blIdUQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.TransferMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.TransferMode.html",
+          "hash": "jxuf+y4IxDidJlo2fwj3bw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DouglasDwyer.ExtensibleFtp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DouglasDwyer.ExtensibleFtp.html",
+          "hash": "JxOf+UmCubPWq4w9YE2wdg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "jE2KJX47OAr7xjts5djfkQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "ngOM1o7q8/0DsYAcYMZjKA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "8GDpdB2iMAnerBJ18ch8Mw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "yPW9VTEkG0wX+g4cEv3IPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 2,
+          "skipped_file_count": 1
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 36,
+          "skipped_file_count": 36
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

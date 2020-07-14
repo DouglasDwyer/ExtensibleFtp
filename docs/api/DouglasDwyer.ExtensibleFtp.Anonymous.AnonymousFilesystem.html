@@ -1,0 +1,837 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class AnonymousFilesystem
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class AnonymousFilesystem
+   ">
+    <meta name="generator" content="docfx 2.54.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem">
+  
+  
+  <h1 id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem" class="text-break">Class AnonymousFilesystem
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a filesystem where users have full control over any files under a certain root directory.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">AnonymousFilesystem</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="DouglasDwyer.ExtensibleFtp.IFtpFilesystem.html">IFtpFilesystem</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DouglasDwyer.ExtensibleFtp.Anonymous.html">DouglasDwyer.ExtensibleFtp.Anonymous</a></h6>
+  <h6><strong>Assembly</strong>: ExtensibleFtp.dll</h6>
+  <h5 id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class AnonymousFilesystem : IFtpFilesystem</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem__ctor_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.#ctor*"></a>
+  <h4 id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem__ctor_System_String_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.#ctor(System.String)">AnonymousFilesystem(String)</h4>
+  <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.html">AnonymousFilesystem</a> instance with the specified data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AnonymousFilesystem(string rootDirectory)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">rootDirectory</span></td>
+        <td><p>The root directory in which users should be allowed to edit files.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_RootDirectory_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.RootDirectory*"></a>
+  <h4 id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_RootDirectory" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.RootDirectory">RootDirectory</h4>
+  <div class="markdown level1 summary"><p>The root directory in which users should be allowed to edit files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string RootDirectory { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_CreateDirectory_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.CreateDirectory*"></a>
+  <h4 id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_CreateDirectory_System_String_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.CreateDirectory(System.String)">CreateDirectory(String)</h4>
+  <div class="markdown level1 summary"><p>Creates a new directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CreateDirectory(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The name of the directory to create.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_CreateFile_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.CreateFile*"></a>
+  <h4 id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_CreateFile_System_String_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.CreateFile(System.String)">CreateFile(String)</h4>
+  <div class="markdown level1 summary"><p>Creates a new file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FileStream CreateFile(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path of the file to create.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.FileStream</span></td>
+        <td><p>A file stream for writing to the new file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_DeleteDirectory_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.DeleteDirectory*"></a>
+  <h4 id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_DeleteDirectory_System_String_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.DeleteDirectory(System.String)">DeleteDirectory(String)</h4>
+  <div class="markdown level1 summary"><p>Deletes a directory recursively, removing all files and subdirectories.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteDirectory(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path of the directory to delete.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_DeleteFile_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.DeleteFile*"></a>
+  <h4 id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_DeleteFile_System_String_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.DeleteFile(System.String)">DeleteFile(String)</h4>
+  <div class="markdown level1 summary"><p>Deletes a file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteFile(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path of the file to delete.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_DirectoryExists_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.DirectoryExists*"></a>
+  <h4 id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_DirectoryExists_System_String_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.DirectoryExists(System.String)">DirectoryExists(String)</h4>
+  <div class="markdown level1 summary"><p>Checks whether a directory exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool DirectoryExists(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The directory to check.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>Whether the directory exists.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_FileExists_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.FileExists*"></a>
+  <h4 id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_FileExists_System_String_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.FileExists(System.String)">FileExists(String)</h4>
+  <div class="markdown level1 summary"><p>Checks whether a file exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool FileExists(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The file to check.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>Whether the file exists.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_GetDirectoryInfo_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.GetDirectoryInfo*"></a>
+  <h4 id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_GetDirectoryInfo_System_String_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.GetDirectoryInfo(System.String)">GetDirectoryInfo(String)</h4>
+  <div class="markdown level1 summary"><p>Retrieves a <span class="xref">System.IO.DirectoryInfo</span> object that contains information about a specified directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DirectoryInfo GetDirectoryInfo(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path of the directory.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.DirectoryInfo</span></td>
+        <td><p>An object containing information about the directory.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_GetDirectoryPermissions_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.GetDirectoryPermissions*"></a>
+  <h4 id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_GetDirectoryPermissions_System_String_DouglasDwyer_ExtensibleFtp_IFtpIdentity_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.GetDirectoryPermissions(System.String,DouglasDwyer.ExtensibleFtp.IFtpIdentity)">GetDirectoryPermissions(String, IFtpIdentity)</h4>
+  <div class="markdown level1 summary"><p>Gets the permission listing for the specified directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetDirectoryPermissions(string path, IFtpIdentity identity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path of the directory to get information about.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DouglasDwyer.ExtensibleFtp.IFtpIdentity.html">IFtpIdentity</a></td>
+        <td><span class="parametername">identity</span></td>
+        <td><p>The identity of the current user.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A unix-formatted permission string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_GetFileInfo_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.GetFileInfo*"></a>
+  <h4 id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_GetFileInfo_System_String_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.GetFileInfo(System.String)">GetFileInfo(String)</h4>
+  <div class="markdown level1 summary"><p>Retrieves a <span class="xref">System.IO.FileInfo</span> object that contains information about a specified file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FileInfo GetFileInfo(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path of the file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.FileInfo</span></td>
+        <td><p>An object containing information about the file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_GetFilePermissions_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.GetFilePermissions*"></a>
+  <h4 id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_GetFilePermissions_System_String_DouglasDwyer_ExtensibleFtp_IFtpIdentity_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.GetFilePermissions(System.String,DouglasDwyer.ExtensibleFtp.IFtpIdentity)">GetFilePermissions(String, IFtpIdentity)</h4>
+  <div class="markdown level1 summary"><p>Gets the permission listing for the specified file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetFilePermissions(string path, IFtpIdentity identity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path of the file to get information about.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DouglasDwyer.ExtensibleFtp.IFtpIdentity.html">IFtpIdentity</a></td>
+        <td><span class="parametername">identity</span></td>
+        <td><p>The identity of the current user.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A unix-formatted permission string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_GetFiles_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.GetFiles*"></a>
+  <h4 id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_GetFiles_System_String_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.GetFiles(System.String)">GetFiles(String)</h4>
+  <div class="markdown level1 summary"><p>Retrieves all the files in the specified directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string[] GetFiles(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path of the directory.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><p>A list of files.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_GetFileStream_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.GetFileStream*"></a>
+  <h4 id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_GetFileStream_System_String_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.GetFileStream(System.String)">GetFileStream(String)</h4>
+  <div class="markdown level1 summary"><p>Retrieves a read-only file stream for the specified file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FileStream GetFileStream(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path of the file to read.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.FileStream</span></td>
+        <td><p>A read-only file stream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_GetSubdirectories_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.GetSubdirectories*"></a>
+  <h4 id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_GetSubdirectories_System_String_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.GetSubdirectories(System.String)">GetSubdirectories(String)</h4>
+  <div class="markdown level1 summary"><p>Retrieves all the subdirectories in the specified directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string[] GetSubdirectories(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path of the directory.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><p>A list of directories.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_MoveDirectory_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.MoveDirectory*"></a>
+  <h4 id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_MoveDirectory_System_String_System_String_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.MoveDirectory(System.String,System.String)">MoveDirectory(String, String)</h4>
+  <div class="markdown level1 summary"><p>Moves a directory, changing its path.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void MoveDirectory(string oldPath, string newPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">oldPath</span></td>
+        <td><p>The current path of the directory.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">newPath</span></td>
+        <td><p>The new path of the directory.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_MoveFile_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.MoveFile*"></a>
+  <h4 id="DouglasDwyer_ExtensibleFtp_Anonymous_AnonymousFilesystem_MoveFile_System_String_System_String_" data-uid="DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.MoveFile(System.String,System.String)">MoveFile(String, String)</h4>
+  <div class="markdown level1 summary"><p>Moves a file, changing its path.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void MoveFile(string oldPath, string newPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">oldPath</span></td>
+        <td><p>The current path of the file.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">newPath</span></td>
+        <td><p>The new path of the file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="DouglasDwyer.ExtensibleFtp.IFtpFilesystem.html">IFtpFilesystem</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
