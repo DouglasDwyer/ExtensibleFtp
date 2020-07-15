@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>This is the YEET. </title>
+    <title>ExtensibleFtp </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="This is the YEET. ">
+    <meta name="title" content="ExtensibleFtp ">
     <meta name="generator" content="docfx 2.54.0.0">
     
     <link rel="shortcut icon" href="favicon.ico">
@@ -60,13 +60,42 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="this-is-the-yeet">This is the <strong>YEET</strong>.</h1>
+<h1 id="extensibleftp">ExtensibleFtp</h1>
 
-<p>Refer to <a href="http://daringfireball.net/projects/markdown/">Markdown</a> for how to write markdown files.</p>
-<h2 id="quick-start-notes">Quick Start Notes:</h2>
-<ol>
-<li>Add images to the <em>images</em> folder if the file is referencing an image.</li>
-</ol>
+<p>ExtensibleFtp provides a customizable, scalable FTP server implementation in .NET.  It comes with a default implementation for anonymous FTP access, and allows for easy addition of new commands, abstract filesystems, and user identities/login schemes.</p>
+<h3 id="referencing-extensibleftp">Referencing ExtensibleFtp</h3>
+<p>ExtensibleFtp is available as a Nuget package called <code>DouglasDwyer.ExtensibleFtp</code> for inclusion in any .NET project.  To include it in your project, either download it using the package manager GUI in Visual Studio, or run the command <code>Install-Package DouglasDwyer.ExtensibleFtp</code> from the Nuget package manager console.</p>
+<h3 id="basic-concepts">Basic concepts</h3>
+<p>ExtensibleFtp servers are separated into several classes in order to allow for scalability and easy reconfiguration.  The <code>ExtensibleFtpServer</code> class listens for new FTP connections while managing currently connected clients.  It contains a list of <code>FtpCommand</code>, which are objects that represent unique actions the user can commit over FTP.  The behavior of FTP commands such as <code>USER</code> or <code>PASV</code> is defined by inheriting the <code>FtpCommand</code> abstract class.  In addition, the server object contains an <code>IFtpAuthenticator</code> object, which is in charge of managing user accounts.  The authenticator is used to implement login behavior (such as checking for a username and password in a database), and generating <code>IFtpIdentity</code> instances, which represent unique user identities and may be used to define various user permissions.  In turn, <code>IFtpIdentity</code> objects expose an <code>IFtpFilesystem</code> interface, which is an abstraction over a user filesystem.  Custom <code>IFtpFilesystem</code> implementations allow for much flexibility and creativity - files/folders can be hidden, restricted, or even &quot;fabricated&quot; without really existing on the host machine.  This website contains the complete API reference, with documentation of all parts of the library.</p>
+<h3 id="getting-started">Getting started</h3>
+<h4 id="creating-a-new-server">Creating a new server</h4>
+<p>Starting a new FTP server using C# is as simple as two lines of code!  After referencing <code>DouglasDwyer.ExtensibleFtp</code>, one can instantiate FTP servers like this:</p>
+<pre><code class="lang-c#">ExtensibleFtpServer server = new ExtensibleFtpServer(new AnonymousAuthenticator(&quot;C:/Some/Path/&quot;));
+server.Start();
+</code></pre>
+<p>This code creates a new server coupled with an <code>AnonymousAuthenticator</code>, an authenticator that allows any connected users access to the specified directory and all of its contents.  <code>server.Start()</code> causes the server to begin listening (on port 21 by default).</p>
+<h4 id="adding-a-custom-ftp-command">Adding a custom FTP command</h4>
+<p>A number of standard FTP commands are included in the ExtensibleFtp implementation.  If the need arises to create a new/custom command, though, the implementation is simple - just override the <code>FtpCommand</code> interface and specify the custom behavior.  The code for the <code>DELE</code> command is given below:</p>
+<pre><code class="lang-c#">public class DeleCommand : FtpCommand
+{
+    public override string CommandName =&gt; &quot;DELE&quot;;
+
+    public override void Execute(ExtensibleFtpUser user, string path)
+    {
+        path = Path.Combine(user.CurrentDirectory, path);
+        if(user.Filesystem.FileExists(path))
+        {
+            user.Filesystem.DeleteFile(path);
+            user.SendResponse(FtpStatusCode.FileActionOK, &quot;File deleted successfully.&quot;);
+        }
+        else
+        {
+            throw new FtpException(FtpStatusCode.ActionNotTakenFileUnavailable, &quot;File does not exist.&quot;);
+        }
+    }
+}
+</code></pre>
+<p>Instances of the <code>ExtensibleFtpUser</code> class are used to interact with clients.  It is separate from <code>IFtpIdentity</code> - the user class allows for actions like sending and receiving FTP messages, whereas an identity identifies a user.  Anyhow, to use a custom command with a server, it can either be passed into the <code>ExtensibleFtpServer</code> constructor along with all other commands that the server should use, or it can be added to the <code>ExtensibleFtpServer.DefaultCommandSet</code> list.  Any servers instantiated without a specified command set after the command is added to the list will recognize it.</p>
 </article>
           </div>
           
