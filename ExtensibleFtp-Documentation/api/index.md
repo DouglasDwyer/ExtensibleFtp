@@ -1,2 +1,2 @@
-# PLACEHOLDER
-TODO: Add .NET projects to the *src* folder and run `docfx` to generate **REAL** *API Documentation*!
+# ExtensibleFtp API Documentation
+This is the C# documentation for ExtensibleFtp. The core ExtensibleFtp functionality is established in the `DouglasDwyer.ExtensibleFtp` namespace, which contains all classes necessary for setting up a basic FTP server.  Default FTP command definitions are located within the `DouglasDwyer.ExtensibleFtp.Commands` namespace, and an anonymous server implementation may be found within `DouglasDwyer.ExtensibleFtp.Anonymous`. For details on getting started with ExtensibleFtp, see the homepage.
