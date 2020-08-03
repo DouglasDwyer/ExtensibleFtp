@@ -1,4 +1,5 @@
 ![Nuget](https://img.shields.io/nuget/v/DouglasDwyer.ExtensibleFtp)
+![Downloads](https://img.shields.io/nuget/dt/DouglasDwyer.ExtensibleFtp)
 
 # ExtensibleFtp
 ExtensibleFtp provides a customizable, scalable FTP server implementation in .NET.  It comes with a default implementation for anonymous FTP access, and allows for easy addition of new commands, abstract filesystems, and user identities/login schemes.
