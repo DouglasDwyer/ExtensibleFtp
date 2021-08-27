@@ -1,0 +1,555 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ExtensibleFtp</name>
+    </assembly>
+    <members>
+        <member name="T:DouglasDwyer.ExtensibleFtp.ActiveDataConnector">
+            <summary>
+            Represents an "active" data connector, which creates data connections by connecting to a port on clients' machines.
+            </summary>
+        </member>
+        <member name="P:DouglasDwyer.ExtensibleFtp.ActiveDataConnector.ConnectionEndpoint">
+            <summary>
+            The endpoint to connect to when creating data connections.
+            </summary>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.ActiveDataConnector.#ctor(System.Net.IPEndPoint)">
+            <summary>
+            Creates a new active data connector with the specified endpoint.
+            </summary>
+            <param name="connectionEndpoint">The endpoint that should be connected to when creating data connections.</param>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.ActiveDataConnector.CreateDataConnectionAsync">
+            <summary>
+            Creates a new data connection.
+            </summary>
+            <returns>A <see cref="T:System.Net.Sockets.TcpClient"/> that can be used to transfer data.  The client should be disposed when no longer in use.</returns>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.ActiveDataConnector.Dispose">
+            <summary>
+            Disposes the connector, closing any active data connections in the process.
+            </summary>
+        </member>
+        <member name="T:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousAuthenticator">
+            <summary>
+            Represents an authenticator which allows users to connect to the FTP server under any username.
+            </summary>
+        </member>
+        <member name="P:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousAuthenticator.RootDirectory">
+            <summary>
+            The root directory from which users can edit files.
+            </summary>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousAuthenticator.#ctor">
+            <summary>
+            Creates a new <see cref="T:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousAuthenticator"/> instance.
+            </summary>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousAuthenticator.#ctor(System.String)">
+            <summary>
+            Creates a new <see cref="T:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousAuthenticator"/> instance with the specified data.
+            </summary>
+            <param name="rootDirectory">The root directory under which users can edit files.</param>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousAuthenticator.AuthenticateUser(System.String,System.String)">
+            <summary>
+            Authenticates a user, identifying them from their username/password.
+            </summary>
+            <param name="username">The username of the individual attempting to log in.</param>
+            <param name="password">The password of the user.</param>
+            <returns>An <see cref="T:DouglasDwyer.ExtensibleFtp.IFtpIdentity"/> object representing the logged-in user, or <c>null</c> if the attempt failed.</returns>
+        </member>
+        <member name="T:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem">
+            <summary>
+            Represents a filesystem where users have full control over any files under a certain root directory.
+            </summary>
+        </member>
+        <member name="P:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.RootDirectory">
+            <summary>
+            The root directory in which users should be allowed to edit files.
+            </summary>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.#ctor(System.String)">
+            <summary>
+            Creates a new <see cref="T:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem"/> instance with the specified data.
+            </summary>
+            <param name="rootDirectory">The root directory in which users should be allowed to edit files.</param>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.DirectoryExists(System.String)">
+            <summary>
+            Checks whether a directory exists.
+            </summary>
+            <param name="path">The directory to check.</param>
+            <returns>Whether the directory exists.</returns>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.FileExists(System.String)">
+            <summary>
+            Checks whether a file exists.
+            </summary>
+            <param name="path">The file to check.</param>
+            <returns>Whether the file exists.</returns>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.GetFiles(System.String)">
+            <summary>
+            Retrieves all the files in the specified directory.
+            </summary>
+            <param name="path">The path of the directory.</param>
+            <returns>A list of files.</returns>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.GetSubdirectories(System.String)">
+            <summary>
+            Retrieves all the subdirectories in the specified directory.
+            </summary>
+            <param name="path">The path of the directory.</param>
+            <returns>A list of directories.</returns>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.GetDirectoryInfo(System.String)">
+            <summary>
+            Retrieves a <see cref="T:System.IO.DirectoryInfo"/> object that contains information about a specified directory.
+            </summary>
+            <param name="path">The path of the directory.</param>
+            <returns>An object containing information about the directory.</returns>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.GetFileInfo(System.String)">
+            <summary>
+            Retrieves a <see cref="T:System.IO.FileInfo"/> object that contains information about a specified file.
+            </summary>
+            <param name="path">The path of the file.</param>
+            <returns>An object containing information about the file.</returns>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.GetFileStream(System.String)">
+            <summary>
+            Retrieves a read-only file stream for the specified file.
+            </summary>
+            <param name="path">The path of the file to read.</param>
+            <returns>A read-only file stream.</returns>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.GetFilePermissions(System.String,DouglasDwyer.ExtensibleFtp.IFtpIdentity)">
+            <summary>
+            Gets the permission listing for the specified file.
+            </summary>
+            <param name="path">The path of the file to get information about.</param>
+            <param name="identity">The identity of the current user.</param>
+            <returns>A unix-formatted permission string.</returns>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.GetDirectoryPermissions(System.String,DouglasDwyer.ExtensibleFtp.IFtpIdentity)">
+            <summary>
+            Gets the permission listing for the specified directory.
+            </summary>
+            <param name="path">The path of the directory to get information about.</param>
+            <param name="identity">The identity of the current user.</param>
+            <returns>A unix-formatted permission string.</returns>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.DeleteFile(System.String)">
+            <summary>
+            Deletes a file.
+            </summary>
+            <param name="path">The path of the file to delete.</param>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.DeleteDirectory(System.String)">
+            <summary>
+            Deletes a directory recursively, removing all files and subdirectories.
+            </summary>
+            <param name="path">The path of the directory to delete.</param>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.CreateDirectory(System.String)">
+            <summary>
+            Creates a new directory.
+            </summary>
+            <param name="path">The name of the directory to create.</param>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.CreateFile(System.String)">
+            <summary>
+            Creates a new file.
+            </summary>
+            <param name="path">The path of the file to create.</param>
+            <returns>A file stream for writing to the new file.</returns>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.MoveDirectory(System.String,System.String)">
+            <summary>
+            Moves a directory, changing its path.
+            </summary>
+            <param name="oldPath">The current path of the directory.</param>
+            <param name="newPath">The new path of the directory.</param>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousFilesystem.MoveFile(System.String,System.String)">
+            <summary>
+            Moves a file, changing its path.
+            </summary>
+            <param name="oldPath">The current path of the file.</param>
+            <param name="newPath">The new path of the file.</param>
+        </member>
+        <member name="T:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousIdentity">
+            <summary>
+            Represents the identity of an anonymous user who has complete control over any files in a certain root directory.
+            </summary>
+        </member>
+        <member name="P:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousIdentity.Filesystem">
+            <summary>
+            The filesystem that this user has access to.
+            </summary>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousIdentity.#ctor(System.String)">
+            <summary>
+            Creates a new instance of <see cref="T:DouglasDwyer.ExtensibleFtp.Anonymous.AnonymousIdentity"/> with access to the specified directory and its subdirectories.
+            </summary>
+            <param name="rootDirectory">The root directory this user should have access to.</param>
+        </member>
+        <member name="T:DouglasDwyer.ExtensibleFtp.IDataConnector">
+            <summary>
+            Represents a factory used for generating data connections.
+            </summary>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.IDataConnector.CreateDataConnectionAsync">
+            <summary>
+            Creates a new data connection.
+            </summary>
+            <returns>A <see cref="T:System.Net.Sockets.TcpClient"/> that can be used to transfer data.  The client should be disposed when no longer in use.</returns>
+        </member>
+        <member name="T:DouglasDwyer.ExtensibleFtp.ExtensibleFtpServer">
+            <summary>
+            Acts as a server which facilitates interaction between remote users and the host filesystem through the FTP protocol.
+            </summary>
+        </member>
+        <member name="F:DouglasDwyer.ExtensibleFtp.ExtensibleFtpServer.DefaultCommandSet">
+            <summary>
+            The default list of FTP commands to use when instantiating new instances of <see cref="T:DouglasDwyer.ExtensibleFtp.ExtensibleFtpServer"/>.  It contains all the basic commands necessary for FTP transactions.
+            </summary>
+        </member>
+        <member name="P:DouglasDwyer.ExtensibleFtp.ExtensibleFtpServer.Authenticator">
+            <summary>
+            The object which manages the authentication of users attempting to log into the FTP system.
+            </summary>
+        </member>
+        <member name="P:DouglasDwyer.ExtensibleFtp.ExtensibleFtpServer.CommandSet">
+            <summary>
+            The command set that this FTP server is currently using.
+            </summary>
+        </member>
+        <member name="P:DouglasDwyer.ExtensibleFtp.ExtensibleFtpServer.OnlineUsers">
+            <summary>
+            A list of users currently logged into the server.
+            </summary>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.ExtensibleFtpServer.#ctor(DouglasDwyer.ExtensibleFtp.IFtpAuthenticator)">
+            <summary>
+            Creates a new <see cref="T:DouglasDwyer.ExtensibleFtp.ExtensibleFtpServer"/> instance with the specified authenticator.
+            </summary>
+            <param name="authenticator">An FTP authenticator which manages user identities.</param>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.ExtensibleFtpServer.#ctor(DouglasDwyer.ExtensibleFtp.IFtpAuthenticator,System.Collections.Generic.List{DouglasDwyer.ExtensibleFtp.FtpCommand})">
+            <summary>
+            Creates a new <see cref="T:DouglasDwyer.ExtensibleFtp.ExtensibleFtpServer"/> instance with the specified authenticator and command set.
+            </summary>
+            <param name="authenticator">An FTP authenticator which manages user identities.</param>
+            <param name="commandSet">The set of FTP commands to use.</param>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.ExtensibleFtpServer.Start(System.Int32)">
+            <summary>
+            Starts the FTP server.
+            </summary>
+            <param name="port">The port that the FTP server should listen on.</param>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.ExtensibleFtpServer.Stop">
+            <summary>
+            Stops the FTP server, severing all client connections.
+            </summary>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.ExtensibleFtpServer.GetCommand(System.String)">
+            <summary>
+            Gets a registered FTP command by the command's name.
+            </summary>
+            <param name="commandName">The name of the command in the current command set to obtain.</param>
+            <returns>The specified command, or null if no command was found.</returns>
+        </member>
+        <member name="T:DouglasDwyer.ExtensibleFtp.ExtensibleFtpUser">
+            <summary>
+            Represents a client that is currently connected to an <see cref="T:DouglasDwyer.ExtensibleFtp.ExtensibleFtpServer"/>.
+            </summary>
+        </member>
+        <member name="P:DouglasDwyer.ExtensibleFtp.ExtensibleFtpUser.Host">
+            <summary>
+            The FTP server that is hosting this client.
+            </summary>
+        </member>
+        <member name="P:DouglasDwyer.ExtensibleFtp.ExtensibleFtpUser.Identity">
+            <summary>
+            The client's user identity, or null if the client is not logged in.
+            </summary>
+        </member>
+        <member name="P:DouglasDwyer.ExtensibleFtp.ExtensibleFtpUser.Filesystem">
+            <summary>
+            The filesystem associated with the current <see cref="P:DouglasDwyer.ExtensibleFtp.ExtensibleFtpUser.Identity"/>.  This may throw an exception if the user is not logged in.
+            </summary>
+        </member>
+        <member name="P:DouglasDwyer.ExtensibleFtp.ExtensibleFtpUser.TransferType">
+            <summary>
+            The encoding type to use when transferring information across the data connection.
+            </summary>
+        </member>
+        <member name="P:DouglasDwyer.ExtensibleFtp.ExtensibleFtpUser.DataClient">
+            <summary>
+            The current data connector.
+            </summary>
+        </member>
+        <member name="P:DouglasDwyer.ExtensibleFtp.ExtensibleFtpUser.IsLoggedIn">
+            <summary>
+            Whether the client has been authenticated.
+            </summary>
+        </member>
+        <member name="P:DouglasDwyer.ExtensibleFtp.ExtensibleFtpUser.CurrentDirectory">
+            <summary>
+            The user's current FTP directory.
+            </summary>
+        </member>
+        <member name="F:DouglasDwyer.ExtensibleFtp.ExtensibleFtpUser.LastCommandData">
+            <summary>
+            An object which contains data put there by the last command used.  Two-part commands, like USER and PASS, use this object to pass data between each other.
+            </summary>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.ExtensibleFtpUser.Stop">
+            <summary>
+            Stops the FTP connection and disconnects the user from the server.
+            </summary>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.ExtensibleFtpUser.SendResponse(System.Net.FtpStatusCode,System.String)">
+            <summary>
+            Sends an FTP response to the client.  FTP responses consist of a status code and a single-line message.
+            </summary>
+            <param name="code">The FTP status code to send.</param>
+            <param name="data">The message to send along with the status code.</param>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.ExtensibleFtpUser.SendResponse(System.Int32,System.String)">
+            <summary>
+            Sends an FTP response to the client.  FTP responses consist of a status code and a single-line message.
+            </summary>
+            <param name="code">The FTP status code to send.</param>
+            <param name="data">The message to send along with the status code.</param>
+        </member>
+        <member name="T:DouglasDwyer.ExtensibleFtp.FtpCommand">
+            <summary>
+            Represents an FTP command that a user may issue to an FTP server to perform a certain action.
+            </summary>
+        </member>
+        <member name="P:DouglasDwyer.ExtensibleFtp.FtpCommand.CommandName">
+            <summary>
+            The name of the command that the user should issue.
+            </summary>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.FtpCommand.Execute(DouglasDwyer.ExtensibleFtp.ExtensibleFtpUser,System.String)">
+            <summary>
+            This method is called when a user issues this command.
+            </summary>
+            <param name="user">The user who made the request.</param>
+            <param name="arguments">Any extra data that the user sent along with the name of the request.</param>
+        </member>
+        <member name="T:DouglasDwyer.ExtensibleFtp.FtpException">
+            <summary>
+            Represents an FTP error which occured during processing a user request.  When an FTP exception is thrown, its information is relayed to the FTP client.
+            </summary>
+        </member>
+        <member name="P:DouglasDwyer.ExtensibleFtp.FtpException.StatusCode">
+            <summary>
+            The status code associated with this error.
+            </summary>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.FtpException.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:DouglasDwyer.ExtensibleFtp.FtpException"/> class.
+            </summary>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.FtpException.#ctor(System.Int32,System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:DouglasDwyer.ExtensibleFtp.FtpException"/> class with the specified data.
+            </summary>
+            <param name="code">The FTP status code associated with this error.</param>
+            <param name="error">A message describing the error itself.</param>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.FtpException.#ctor(System.Net.FtpStatusCode,System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:DouglasDwyer.ExtensibleFtp.FtpException"/> class with the specified data.
+            </summary>
+            <param name="code">The FTP status code associated with this error.</param>
+            <param name="error">A message describing the error itself.</param>
+        </member>
+        <member name="T:DouglasDwyer.ExtensibleFtp.IFtpAuthenticator">
+            <summary>
+            Represents an object which manages user accounts and has the ability to authenticate users given their username and password.
+            </summary>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.IFtpAuthenticator.AuthenticateUser(System.String,System.String)">
+            <summary>
+            Authenticates a user, identifying them from their username/password.
+            </summary>
+            <param name="username">The username of the individual attempting to log in.</param>
+            <param name="password">The password of the user.</param>
+            <returns>An <see cref="T:DouglasDwyer.ExtensibleFtp.IFtpIdentity"/> object representing the logged-in user, or <c>null</c> if the attempt failed.</returns>
+        </member>
+        <member name="T:DouglasDwyer.ExtensibleFtp.IFtpFilesystem">
+            <summary>
+            Represents an abstract filesystem that FTP users can interact with.
+            </summary>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.IFtpFilesystem.DirectoryExists(System.String)">
+            <summary>
+            Checks whether a directory exists.
+            </summary>
+            <param name="path">The directory to check.</param>
+            <returns>Whether the directory exists.</returns>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.IFtpFilesystem.FileExists(System.String)">
+            <summary>
+            Checks whether a file exists.
+            </summary>
+            <param name="path">The file to check.</param>
+            <returns>Whether the file exists.</returns>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.IFtpFilesystem.GetFiles(System.String)">
+            <summary>
+            Retrieves all the files in the specified directory.
+            </summary>
+            <param name="path">The path of the directory.</param>
+            <returns>A list of files.</returns>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.IFtpFilesystem.GetSubdirectories(System.String)">
+            <summary>
+            Retrieves all the subdirectories in the specified directory.
+            </summary>
+            <param name="path">The path of the directory.</param>
+            <returns>A list of directories.</returns>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.IFtpFilesystem.GetDirectoryInfo(System.String)">
+            <summary>
+            Retrieves a <see cref="T:System.IO.DirectoryInfo"/> object that contains information about a specified directory.
+            </summary>
+            <param name="path">The path of the directory.</param>
+            <returns>An object containing information about the directory.</returns>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.IFtpFilesystem.GetFileInfo(System.String)">
+            <summary>
+            Retrieves a <see cref="T:System.IO.FileInfo"/> object that contains information about a specified file.
+            </summary>
+            <param name="path">The path of the file.</param>
+            <returns>An object containing information about the file.</returns>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.IFtpFilesystem.GetFileStream(System.String)">
+            <summary>
+            Retrieves a read-only file stream for the specified file.
+            </summary>
+            <param name="path">The path of the file to read.</param>
+            <returns>A read-only file stream.</returns>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.IFtpFilesystem.GetFilePermissions(System.String,DouglasDwyer.ExtensibleFtp.IFtpIdentity)">
+            <summary>
+            Gets the permission listing for the specified file, relative to the current user.
+            </summary>
+            <param name="path">The path of the file to get information about.</param>
+            <param name="identity">The identity of the current user.</param>
+            <returns>A unix-formatted permission string.</returns>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.IFtpFilesystem.GetDirectoryPermissions(System.String,DouglasDwyer.ExtensibleFtp.IFtpIdentity)">
+            <summary>
+            Gets the permission listing for the specified directory, relative to the current user.
+            </summary>
+            <param name="path">The path of the directory to get information about.</param>
+            <param name="identity">The identity of the current user.</param>
+            <returns>A unix-formatted permission string.</returns>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.IFtpFilesystem.DeleteFile(System.String)">
+            <summary>
+            Deletes a file.
+            </summary>
+            <param name="path">The path of the file to delete.</param>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.IFtpFilesystem.DeleteDirectory(System.String)">
+            <summary>
+            Deletes a directory recursively, removing all files and subdirectories.
+            </summary>
+            <param name="path">The path of the directory to delete.</param>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.IFtpFilesystem.CreateDirectory(System.String)">
+            <summary>
+            Creates a new directory.
+            </summary>
+            <param name="path">The name of the directory to create.</param>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.IFtpFilesystem.CreateFile(System.String)">
+            <summary>
+            Creates a new file.
+            </summary>
+            <param name="path">The path of the file to create.</param>
+            <returns>A file stream for writing to the new file.</returns>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.IFtpFilesystem.MoveDirectory(System.String,System.String)">
+            <summary>
+            Moves a directory, changing its path.
+            </summary>
+            <param name="oldPath">The current path of the directory.</param>
+            <param name="newPath">The new path of the directory.</param>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.IFtpFilesystem.MoveFile(System.String,System.String)">
+            <summary>
+            Moves a file, changing its path.
+            </summary>
+            <param name="oldPath">The current path of the file.</param>
+            <param name="newPath">The new path of the file.</param>
+        </member>
+        <member name="T:DouglasDwyer.ExtensibleFtp.IFtpIdentity">
+            <summary>
+            Represents the identity of an <see cref="T:DouglasDwyer.ExtensibleFtp.ExtensibleFtpUser"/>.
+            </summary>
+        </member>
+        <member name="P:DouglasDwyer.ExtensibleFtp.IFtpIdentity.Filesystem">
+            <summary>
+            The filesystem that users with this identity should be allowed to interact with.
+            </summary>
+        </member>
+        <member name="T:DouglasDwyer.ExtensibleFtp.PassiveDataConnector">
+            <summary>
+            Represents a "passive" data connector, which creates data connections by listening for clients on a specific server-side port.
+            </summary>
+        </member>
+        <member name="F:DouglasDwyer.ExtensibleFtp.PassiveDataConnector.DataListener">
+            <summary>
+            The current <see cref="T:System.Net.Sockets.TcpListener"/> used to listen for incoming passive data connections.
+            </summary>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.PassiveDataConnector.#ctor">
+            <summary>
+            Creates a new passive data connector, starting a <see cref="T:System.Net.Sockets.TcpListener"/> to manage data connections in the process.
+            </summary>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.PassiveDataConnector.CreateDataConnectionAsync">
+            <summary>
+            Creates a new data connection.
+            </summary>
+            <returns>A <see cref="T:System.Net.Sockets.TcpClient"/> that can be used to transfer data.  The client should be disposed when no longer in use.</returns>
+        </member>
+        <member name="M:DouglasDwyer.ExtensibleFtp.PassiveDataConnector.Dispose">
+            <summary>
+            Disposes the connector, closing any active data connections in the process.
+            </summary>
+        </member>
+        <member name="T:DouglasDwyer.ExtensibleFtp.TransferMode">
+            <summary>
+            Used to describe the way that files should be transferred over FTP.
+            </summary>
+        </member>
+        <member name="F:DouglasDwyer.ExtensibleFtp.TransferMode.ASCII">
+            <summary>
+            Files should be transferred using ASCII text encoding.
+            </summary>
+        </member>
+        <member name="F:DouglasDwyer.ExtensibleFtp.TransferMode.Binary">
+            <summary>
+            Files should be transferred using their raw binary data.
+            </summary>
+        </member>
+        <member name="F:DouglasDwyer.ExtensibleFtp.TransferMode.EBCDIC">
+            <summary>
+            Files should be transferred using EBCDIC text encoding.
+            </summary>
+        </member>
+    </members>
+</doc>

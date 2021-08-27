@@ -7,3 +7,4 @@ D:\Projects\ExtensibleFtp\ExtensibleFtp\obj\Release\netcoreapp3.1\ExtensibleFtp.
 D:\Projects\ExtensibleFtp\ExtensibleFtp\obj\Release\netcoreapp3.1\ExtensibleFtp.dll
 D:\Projects\ExtensibleFtp\ExtensibleFtp\obj\Release\netcoreapp3.1\ExtensibleFtp.pdb
 D:\Projects\ExtensibleFtp\ExtensibleFtp\obj\Release\netcoreapp3.1\ExtensibleFtp.csproj.CoreCompileInputs.cache
+D:\Projects\ExtensibleFtp\ExtensibleFtp\bin\Release\netcoreapp3.1\ExtensibleFtp.xml

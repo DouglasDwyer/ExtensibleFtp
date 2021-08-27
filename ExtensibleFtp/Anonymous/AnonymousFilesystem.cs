@@ -239,7 +239,7 @@ namespace DouglasDwyer.ExtensibleFtp.Anonymous
         {
             DirectoryInfo di1 = new DirectoryInfo(RootDirectory);
             DirectoryInfo di2 = new DirectoryInfo(path);
-            if(di1.FullName == di2.FullName)
+            if(di1.FullName.TrimEnd('\\') == di2.FullName.TrimEnd('\\'))
             {
                 return true;
             }

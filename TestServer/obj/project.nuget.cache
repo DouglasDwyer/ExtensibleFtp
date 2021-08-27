@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "eAAoT/ZLBzyOpK4rrx8c7qoRRyB9PgJnNgfKA1n3Fx+OsLMfoKeibPMdfY2yea8BmVDpr3zei+wJ8NFFA9xRmg==",
+  "dgSpecHash": "etzgjaVWTBC5cqB4Dr6yQ5zVjCfHJjzSKj0d6IJomtMDhPreL4uT7b93cYQuL9YxIIzbzL9GMPy6QFCPKBDJiw==",
   "success": true,
   "projectFilePath": "D:\\Projects\\ExtensibleFtp\\TestServer\\TestServer.csproj",
   "expectedPackageFiles": [
@@ -15,7 +15,7 @@
     "C:\\Users\\Douglas\\.nuget\\packages\\system.security.permissions\\4.5.0\\system.security.permissions.4.5.0.nupkg.sha512",
     "C:\\Users\\Douglas\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\Douglas\\.nuget\\packages\\system.servicemodel.primitives\\4.7.0\\system.servicemodel.primitives.4.7.0.nupkg.sha512",
-    "C:\\Users\\Douglas\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+    "C:\\Users\\Douglas\\.nuget\\packages\\douglasdwyer.extensibleftp\\1.0.0.2\\douglasdwyer.extensibleftp.1.0.0.2.nupkg.sha512"
   ],
   "logs": []
 }

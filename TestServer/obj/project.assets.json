@@ -163,7 +163,7 @@
           "lib/netcoreapp2.1/System.ServiceModel.dll": {}
         }
       },
-      "DouglasDwyer.ExtensibleFtp/1.0.0": {
+      "DouglasDwyer.ExtensibleFtp/1.0.0.2": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
@@ -598,7 +598,7 @@
         "system.servicemodel.primitives.nuspec"
       ]
     },
-    "DouglasDwyer.ExtensibleFtp/1.0.0": {
+    "DouglasDwyer.ExtensibleFtp/1.0.0.2": {
       "type": "project",
       "path": "../ExtensibleFtp/ExtensibleFtp.csproj",
       "msbuildProject": "../ExtensibleFtp/ExtensibleFtp.csproj"
@@ -606,7 +606,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "DouglasDwyer.ExtensibleFtp >= 1.0.0",
+      "DouglasDwyer.ExtensibleFtp >= 1.0.0.2",
       "System.IO.FileSystem.AccessControl >= 4.7.0"
     ]
   },
@@ -642,6 +642,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
             "D:\\Projects\\ExtensibleFtp\\ExtensibleFtp\\ExtensibleFtp.csproj": {
               "projectPath": "D:\\Projects\\ExtensibleFtp\\ExtensibleFtp\\ExtensibleFtp.csproj"
@@ -657,6 +658,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "System.IO.FileSystem.AccessControl": {
             "target": "Package",
@@ -673,18 +675,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.2, 3.1.2]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
