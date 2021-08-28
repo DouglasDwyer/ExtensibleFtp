@@ -26,7 +26,7 @@ namespace DouglasDwyer.ExtensibleFtp.Anonymous
         /// </summary>
         /// <param name="path">The directory to check.</param>
         /// <returns>Whether the directory exists.</returns>
-        public bool DirectoryExists(string path)
+        public virtual bool DirectoryExists(string path)
         {
             path = CombinePaths(RootDirectory, path);
             return Directory.Exists(path) && IsSubdirectoryOrRoot(path);
@@ -36,7 +36,7 @@ namespace DouglasDwyer.ExtensibleFtp.Anonymous
         /// </summary>
         /// <param name="path">The file to check.</param>
         /// <returns>Whether the file exists.</returns>
-        public bool FileExists(string path)
+        public virtual bool FileExists(string path)
         {
             path = CombinePaths(RootDirectory, path);
             return File.Exists(path) && IsFileOfRoot(path);
@@ -46,7 +46,7 @@ namespace DouglasDwyer.ExtensibleFtp.Anonymous
         /// </summary>
         /// <param name="path">The path of the directory.</param>
         /// <returns>A list of files.</returns>
-        public string[] GetFiles(string path)
+        public virtual string[] GetFiles(string path)
         {
             path = CombinePaths(RootDirectory, path);
             if (!IsSubdirectoryOrRoot(path))
@@ -66,7 +66,7 @@ namespace DouglasDwyer.ExtensibleFtp.Anonymous
         /// </summary>
         /// <param name="path">The path of the directory.</param>
         /// <returns>A list of directories.</returns>
-        public string[] GetSubdirectories(string path)
+        public virtual string[] GetSubdirectories(string path)
         {
             path = CombinePaths(RootDirectory, path);
             if (!IsSubdirectoryOrRoot(path))
@@ -86,7 +86,7 @@ namespace DouglasDwyer.ExtensibleFtp.Anonymous
         /// </summary>
         /// <param name="path">The path of the directory.</param>
         /// <returns>An object containing information about the directory.</returns>
-        public DirectoryInfo GetDirectoryInfo(string path)
+        public virtual DirectoryInfo GetDirectoryInfo(string path)
         {
             path = CombinePaths(RootDirectory, path);
             if (!IsSubdirectoryOrRoot(path))
@@ -100,7 +100,7 @@ namespace DouglasDwyer.ExtensibleFtp.Anonymous
         /// </summary>
         /// <param name="path">The path of the file.</param>
         /// <returns>An object containing information about the file.</returns>
-        public FileInfo GetFileInfo(string path)
+        public virtual FileInfo GetFileInfo(string path)
         {
             path = CombinePaths(RootDirectory, path);
             if (!IsFileOfRoot(path))
@@ -114,7 +114,7 @@ namespace DouglasDwyer.ExtensibleFtp.Anonymous
         /// </summary>
         /// <param name="path">The path of the file to read.</param>
         /// <returns>A read-only file stream.</returns>
-        public FileStream GetFileStream(string path)
+        public virtual FileStream GetFileStream(string path)
         {
             path = CombinePaths(RootDirectory, path);
             if (!IsFileOfRoot(path))
@@ -129,7 +129,7 @@ namespace DouglasDwyer.ExtensibleFtp.Anonymous
         /// <param name="path">The path of the file to get information about.</param>
         /// <param name="identity">The identity of the current user.</param>
         /// <returns>A unix-formatted permission string.</returns>
-        public string GetFilePermissions(string path, IFtpIdentity identity)
+        public virtual string GetFilePermissions(string path, IFtpIdentity identity)
         {
             return "-rwxrwxrwx";
         }
@@ -139,7 +139,7 @@ namespace DouglasDwyer.ExtensibleFtp.Anonymous
         /// <param name="path">The path of the directory to get information about.</param>
         /// <param name="identity">The identity of the current user.</param>
         /// <returns>A unix-formatted permission string.</returns>
-        public string GetDirectoryPermissions(string path, IFtpIdentity identity)
+        public virtual string GetDirectoryPermissions(string path, IFtpIdentity identity)
         {
             return "drwxrwxrwx";
         }
@@ -147,7 +147,7 @@ namespace DouglasDwyer.ExtensibleFtp.Anonymous
         /// Deletes a file.
         /// </summary>
         /// <param name="path">The path of the file to delete.</param>
-        public void DeleteFile(string path)
+        public virtual void DeleteFile(string path)
         {
             path = CombinePaths(RootDirectory, path);
             if (!IsFileOfRoot(path))
@@ -160,7 +160,7 @@ namespace DouglasDwyer.ExtensibleFtp.Anonymous
         /// Deletes a directory recursively, removing all files and subdirectories.
         /// </summary>
         /// <param name="path">The path of the directory to delete.</param>
-        public void DeleteDirectory(string path)
+        public virtual void DeleteDirectory(string path)
         {
             path = CombinePaths(RootDirectory, path);
             if (!IsSubdirectoryOfRoot(path))
@@ -173,7 +173,7 @@ namespace DouglasDwyer.ExtensibleFtp.Anonymous
         /// Creates a new directory.
         /// </summary>
         /// <param name="path">The name of the directory to create.</param>
-        public void CreateDirectory(string path)
+        public virtual void CreateDirectory(string path)
         {
             path = CombinePaths(RootDirectory, path);
             if (!IsSubdirectoryOrRoot(Path.GetDirectoryName(path)))
@@ -187,7 +187,7 @@ namespace DouglasDwyer.ExtensibleFtp.Anonymous
         /// </summary>
         /// <param name="path">The path of the file to create.</param>
         /// <returns>A file stream for writing to the new file.</returns>
-        public FileStream CreateFile(string path)
+        public virtual FileStream CreateFile(string path)
         {
             path = CombinePaths(RootDirectory, path);
             if (!IsFileOfRoot(path))
@@ -201,7 +201,7 @@ namespace DouglasDwyer.ExtensibleFtp.Anonymous
         /// </summary>
         /// <param name="oldPath">The current path of the directory.</param>
         /// <param name="newPath">The new path of the directory.</param>
-        public void MoveDirectory(string oldPath, string newPath)
+        public virtual void MoveDirectory(string oldPath, string newPath)
         {
             oldPath = CombinePaths(RootDirectory, oldPath);
             newPath = CombinePaths(RootDirectory, newPath);
@@ -220,7 +220,7 @@ namespace DouglasDwyer.ExtensibleFtp.Anonymous
         /// </summary>
         /// <param name="oldPath">The current path of the file.</param>
         /// <param name="newPath">The new path of the file.</param>
-        public void MoveFile(string oldPath, string newPath)
+        public virtual void MoveFile(string oldPath, string newPath)
         {
             oldPath = CombinePaths(RootDirectory, oldPath);
             newPath = CombinePaths(RootDirectory, newPath);

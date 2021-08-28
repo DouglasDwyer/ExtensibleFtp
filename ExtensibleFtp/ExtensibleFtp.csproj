@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -13,11 +13,11 @@
     <RepositoryUrl>https://github.com/DouglasDwyer/ExtensibleFtp</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>ftp server csharp</PackageTags>
-    <Version>1.0.0.2</Version>
+    <Version>1.0.1.0</Version>
     <PackageId>DouglasDwyer.ExtensibleFtp</PackageId>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <AssemblyVersion>1.0.0.2</AssemblyVersion>
-    <FileVersion>1.0.0.2</FileVersion>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

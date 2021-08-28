@@ -17,11 +17,11 @@ using System.Reflection;
     ".  It comes with a default implementation for anonymous FTP access, and allows f" +
     "or easy addition of new commands, abstract filesystems, and user identities/logi" +
     "n schemes.")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.2")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0.2")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.1.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("ExtensibleFtp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ExtensibleFtp")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.2")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.1.0")]
 [assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://github.com/DouglasDwyer/ExtensibleFtp")]
 [assembly: System.Resources.NeutralResourcesLanguageAttribute("en-US")]
 

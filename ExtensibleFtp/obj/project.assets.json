@@ -522,7 +522,7 @@
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
-    "version": "1.0.0.2",
+    "version": "1.0.1",
     "restore": {
       "projectUniqueName": "D:\\Projects\\ExtensibleFtp\\ExtensibleFtp\\ExtensibleFtp.csproj",
       "projectName": "DouglasDwyer.ExtensibleFtp",
